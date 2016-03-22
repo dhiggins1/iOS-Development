@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0E432E08E963F9B123E2DCFAE469870016A339E7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2EDBA7B109099BEB4C4542CE9E2AB2E0A704A3BF" : 0,
+    "0E432E08E963F9B123E2DCFAE469870016A339E7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FBED2BE6-C894-447C-82F7-4A3CAB6F3AAE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2EDBA7B109099BEB4C4542CE9E2AB2E0A704A3BF" : "comp41550-47390_2016\/",
+    "0E432E08E963F9B123E2DCFAE469870016A339E7" : "comp47390_11363776_ryan_diarmuid\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TweeterTags",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ASSIGNMENT4\/TweeterTags\/TweeterTags.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.ucd.ie:diarmuid\/comp47390_11363776_ryan_diarmuid.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0E432E08E963F9B123E2DCFAE469870016A339E7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.ucd.ie:Silvestre\/comp41550-47390_2016.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2EDBA7B109099BEB4C4542CE9E2AB2E0A704A3BF"
+    }
+  ]
+}
