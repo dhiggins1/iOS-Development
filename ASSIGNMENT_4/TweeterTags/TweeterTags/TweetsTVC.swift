@@ -12,6 +12,13 @@ struct Constants {
     static let tableCell = "TweetCell"
 }
 
+enum Segues: String {
+    case tweetDetailsSegue = "TweetDetailsSegue"
+    init?(_ segue: UIStoryboardSegue) {
+        self.init(rawValue: segue.identifier!)
+    }
+}
+
 class TweetsTVC: UITableViewController, UITextFieldDelegate {
     var tweets = [[Tweet]]() {
         didSet {
@@ -83,6 +90,21 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         twitterQueryText = textField.text!
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationVC = segue.destinationViewController
+        if let navigationVC = destinationVC as? UINavigationController {
+            destinationVC = navigationVC.visibleViewController!
+        }
+        switch Segues(segue)! {
+        case .tweetDetailsSegue:
+            if let senderView = sender as? TweetCell {
+                if let destinationVC = destinationVC as? TweetDetailsVC {
+                    destinationVC.tweet = senderView.tweet
+                }
+            }
+        }
     }
 
 }

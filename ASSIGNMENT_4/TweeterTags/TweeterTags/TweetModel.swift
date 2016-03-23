@@ -10,11 +10,7 @@ import UIKit
 
 extension User {
     func getProfileImage() -> UIImage? {
-        if let data = NSData(contentsOfURL: self.profileImageURL!) {
-            return UIImage(data: data)
-        } else {
-            return nil
-        }
+        return TweetModel.loadImage(self.profileImageURL!)
     }
 }
 
@@ -31,5 +27,37 @@ extension Tweet {
             string.addAttribute(NSForegroundColorAttributeName, value: color, range: index.nsrange)
         }
         return string
+    }
+}
+
+class TweetModel: NSObject {
+    
+    static func loadImage(url: NSURL) -> UIImage? {
+        if let data = NSData(contentsOfURL: url) {
+            return UIImage(data: data)
+        } else {
+            return nil
+        }
+    }
+    
+    static func loadImageFromString(stringUrl: String) -> UIImage? {
+        print("load image: \(stringUrl)")
+        return loadImage(NSURL(string: stringUrl)!)
+    }
+    
+    static func toStringArray(keyWordArray: [Tweet.IndexedKeyword]) -> [String] {
+        var retVal: [String] = []
+        for item in keyWordArray {
+            retVal.append(item.keyword)
+        }
+        return retVal
+    }
+    
+    static func toStringArray(mediaArray: [MediaItem]) -> [String] {
+        var retVal: [String] = []
+        for item in mediaArray {
+            retVal.append(String(item.url))
+        }
+        return retVal
     }
 }
