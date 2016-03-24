@@ -20,10 +20,13 @@ extension Tweet {
         addColourToKeywords(colouredString, ranges: self.userMentions, color: UIColor.greenColor())
         addColourToKeywords(colouredString, ranges: self.urls, color: UIColor.redColor())
         addColourToKeywords(colouredString, ranges: self.hashtags, color: UIColor.blueColor())
+        for index in self.mediaMentions {
+            colouredString.replaceCharactersInRange(index.nsrange, withAttributedString: NSAttributedString(string: "📷"))
+        }
         return colouredString
     }
     private func addColourToKeywords(string: NSMutableAttributedString, ranges: [IndexedKeyword], color: UIColor) -> NSMutableAttributedString {
-        for var index in ranges {
+        for index in ranges {
             string.addAttribute(NSForegroundColorAttributeName, value: color, range: index.nsrange)
         }
         return string

@@ -10,6 +10,7 @@ import UIKit
 
 struct Constants {
     static let tableCell = "TweetCell"
+    static let userDefaultsSearches = "past user searches"
 }
 
 enum Segues: String {
@@ -34,12 +35,25 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
     
     var twitterQueryText: String? = "#ucd" {
         didSet {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var newSearchArray = [String]()
+            if let searchArray = defaults.objectForKey(Constants.userDefaultsSearches) as? [String] {
+                newSearchArray = searchArray
+                if newSearchArray.count >= 100 {
+                    newSearchArray.popLast()
+                }
+            }
+            if !(twitterQueryText! == newSearchArray.first!) {
+                newSearchArray = [twitterQueryText!] + newSearchArray
+            }
+            print(newSearchArray)
+            defaults.setObject(newSearchArray, forKey: Constants.userDefaultsSearches)
             tweets.removeAll()
             refresh()
             self.title = "Results for \(twitterQueryText!) search"
         }
     }
-    
+
     private func refresh() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             let twitterRequest = TwitterRequest(search: self.twitterQueryText!)
@@ -73,14 +87,14 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
         cell.tweet = tweets[indexPath.section][indexPath.row]
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             if let image = cell.tweet?.user.getProfileImage() {
-                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
                     cell.profileImage.image = image
                 }
             }
         })
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             let colouredText = cell.tweet?.getFormattedText()
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
                 cell.cellText.attributedText = colouredText
             }
         })
