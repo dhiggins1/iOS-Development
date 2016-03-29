@@ -43,7 +43,7 @@ class TweetsTVC: UITableViewController, UITextFieldDelegate {
                     newSearchArray.popLast()
                 }
             }
-            if !(twitterQueryText! == newSearchArray.first!) {
+            if !newSearchArray.isEmpty && !(twitterQueryText! == newSearchArray.first!) {
                 newSearchArray = [twitterQueryText!] + newSearchArray
             }
             print(newSearchArray)
