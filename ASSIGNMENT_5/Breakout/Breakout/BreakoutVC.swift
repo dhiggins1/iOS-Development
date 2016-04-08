@@ -149,11 +149,11 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
                 behavior.remove(Block: blocks[id]!, ID: id)
                 blocks.removeValueForKey(id)
             }
-        }
-        if blocks.count == 0 {
-            let alert = UIAlertController(title: "You Win", message: "You broke all the blocks. Your score was \(BreakoutModel.calculateScore(startTime!, blocksLeft: blocks.count))", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Another Game!", style: UIAlertActionStyle.Default, handler: reactToAction))
-            self.presentViewController(alert, animated: true) {}
+            if blocks.count == 0 {
+                let alert = UIAlertController(title: "You Win", message: "You broke all the blocks. Your score was \(BreakoutModel.calculateScore(startTime!, blocksLeft: blocks.count))", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Another Game!", style: UIAlertActionStyle.Default, handler: reactToAction))
+                self.presentViewController(alert, animated: true) {}
+            }
         }
     }
     
