@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class SpiroModel: NSObject {
+    func calculateZoom(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .Changed {
+            
+        }
+    }
+}

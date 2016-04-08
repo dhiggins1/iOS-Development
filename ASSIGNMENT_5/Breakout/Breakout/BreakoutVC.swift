@@ -16,6 +16,8 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
     
     private var slider: SliderView?
     
+    private var startTime: NSDate?
+    
     @IBAction func tapGesture(sender: UITapGestureRecognizer) {
         print(sender.locationInView(gameView))
         let closestBall = BreakoutModel.getClosestBall(atPoint: sender.locationInView(gameView), forBalls: balls)
@@ -82,6 +84,7 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
         behavior.clear()
         blocks.removeAll()
         balls.removeAll()
+        startTime = nil
     }
     
     func refresh() {
@@ -90,6 +93,7 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
         addBlocks()
         addSlider()
         addBalls()
+        startTime = NSDate();
     }
 
     func addBlocks() {
@@ -147,7 +151,7 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
             }
         }
         if blocks.count == 0 {
-            let alert = UIAlertController(title: "You Win", message: "You broke all the blocks", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "You Win", message: "You broke all the blocks. Your score was \(BreakoutModel.calculateScore(startTime!, blocksLeft: blocks.count))", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Another Game!", style: UIAlertActionStyle.Default, handler: reactToAction))
             self.presentViewController(alert, animated: true) {}
         }
@@ -159,7 +163,7 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
             balls.removeAtIndex(index)
         }
         if balls.count == 0 {
-            let alert = UIAlertController(title: "Game Over", message: "All the Balls Left the Field", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Game Over", message: "All the Balls Left the Field. Your score was \(BreakoutModel.calculateScore(startTime!, blocksLeft: blocks.count))", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Another Game!", style: UIAlertActionStyle.Default, handler: reactToAction))
             self.presentViewController(alert, animated: true) {}
         }

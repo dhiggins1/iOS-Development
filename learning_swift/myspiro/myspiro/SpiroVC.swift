@@ -1,5 +1,5 @@
 //
-//  SpiroView.swift
+//  SpiroVC.swift
 //  myspiro
 //
 //  Created by student on 27/02/2016.
@@ -8,13 +8,27 @@
 
 import UIKit
 
-class SpiroView: UIViewController {
+class SpiroVC: UIViewController, SpiroDataSource {
     
-//    override func drawRect(rect: CGRect) {
-//        let drawCircle = UIBezierPath(arcCenter: center, radius: 2, startAngle: 0.0, endAngle: CGFloat(2*M_PI), clockwise: true)
-//        UIColor.blackColor()
-//        drawCircle.lineWidth = 5
-//        drawCircle.stroke()
-//    }
+    var circleRadius:CGFloat = 20
+    
+    var spiroModel = SpiroModel()
+    
+    @IBOutlet var mySpiroView: SpiroView!{
+        didSet {
+            mySpiroView.dataSource = self
+            mySpiroView.addGestureRecognizer(UIPinchGestureRecognizer(target: mySpiroView, action: "calculateZoom:"))
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
 }

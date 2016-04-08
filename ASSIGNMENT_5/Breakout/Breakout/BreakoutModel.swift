@@ -21,4 +21,11 @@ class BreakoutModel: NSObject {
         }
         return currentMinBall
     }
+    
+    static func calculateScore(startTime: NSDate, blocksLeft: Int) -> Int {
+        let timeInterval = NSDate().timeIntervalSinceDate(startTime)
+        let numBlocks = (NSUserDefaults.standardUserDefaults().objectForKey(SettingsKeys.blocks) ?? 25) as? Int
+        let brokenBlocks = Float(numBlocks! - blocksLeft)
+        return Int((pow(brokenBlocks, 2) / Float(timeInterval)) * 1000)
+    }
 }

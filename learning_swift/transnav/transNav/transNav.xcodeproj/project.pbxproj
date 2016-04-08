@@ -14,6 +14,8 @@
 		3F20A0031C847BF800164E6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F20A0011C847BF800164E6D /* LaunchScreen.storyboard */; };
 		3F20A00E1C847BF800164E6D /* transNavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20A00D1C847BF800164E6D /* transNavTests.swift */; };
 		3F20A0191C847BF800164E6D /* transNavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20A0181C847BF800164E6D /* transNavUITests.swift */; };
+		3F20A0271C847D2700164E6D /* MyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20A0261C847D2700164E6D /* MyMapView.swift */; };
+		3F20A0291C8481DE00164E6D /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20A0281C8481DE00164E6D /* MapModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3F20A0141C847BF800164E6D /* transNavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = transNavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F20A0181C847BF800164E6D /* transNavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transNavUITests.swift; sourceTree = "<group>"; };
 		3F20A01A1C847BF800164E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F20A0261C847D2700164E6D /* MyMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMapView.swift; sourceTree = "<group>"; };
+		3F20A0281C8481DE00164E6D /* MapModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				3F209FFF1C847BF800164E6D /* Assets.xcassets */,
 				3F20A0011C847BF800164E6D /* LaunchScreen.storyboard */,
 				3F20A0041C847BF800164E6D /* Info.plist */,
+				3F20A0261C847D2700164E6D /* MyMapView.swift */,
+				3F20A0281C8481DE00164E6D /* MapModel.swift */,
 			);
 			path = transNav;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F20A0291C8481DE00164E6D /* MapModel.swift in Sources */,
 				3F209FFB1C847BF800164E6D /* ViewController.swift in Sources */,
 				3F209FF91C847BF800164E6D /* AppDelegate.swift in Sources */,
+				3F20A0271C847D2700164E6D /* MyMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
