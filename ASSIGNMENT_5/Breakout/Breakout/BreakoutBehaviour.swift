@@ -80,6 +80,14 @@ class BreakoutBehaviour: UIDynamicBehavior, UICollisionBehaviorDelegate {
                 if itemBehavior.linearVelocityForItem(item).x > -20 {
                     itemBehavior.addLinearVelocity(CGPoint(x: -10, y: -10), forItem: item)
                 }
+            } else if identifier as? String == Boundaries.top {
+                if itemBehavior.linearVelocityForItem(item).y > -20 && itemBehavior.linearVelocityForItem(item).y < 20 {
+                    itemBehavior.addLinearVelocity(CGPoint(x: 0, y: 20), forItem: item)
+                }
+            } else if identifier as? String == Boundaries.slider {
+                if itemBehavior.linearVelocityForItem(item).y > -20 && itemBehavior.linearVelocityForItem(item).y < 20 {
+                    itemBehavior.addLinearVelocity(CGPoint(x: 0, y: -20), forItem: item)
+                }
             }
             breakoutCollisionDelegate?.ballCollidedWithBlock(identifier!)
         }
