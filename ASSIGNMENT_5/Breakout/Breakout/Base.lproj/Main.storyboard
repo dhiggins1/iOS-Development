@@ -37,7 +37,7 @@
                             <constraint firstAttribute="trailing" secondItem="bNW-di-4xc" secondAttribute="trailing" id="oib-60-sxO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Breakout" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Breakout" image="Controller-50" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="gameView" destination="bNW-di-4xc" id="BBM-dV-2vW"/>
                     </connections>
@@ -55,6 +55,35 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Top Scores-->
+        <scene sceneID="aCz-WN-X4a">
+            <objects>
+                <tableViewController id="rZU-Sl-JT3" customClass="TopScoresVC" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UfO-j5-28Q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topScoresCell" id="bSb-xg-fTW">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bSb-xg-fTW" id="Pja-7F-Fmj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rZU-Sl-JT3" id="Rnm-Jg-BuZ"/>
+                            <outlet property="delegate" destination="rZU-Sl-JT3" id="90B-1H-5on"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Top Scores" image="Leaderboard-50" id="KU7-61-QR7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pm-ZK-RF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1159" y="146"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
@@ -212,7 +241,7 @@
                             <constraint firstAttribute="trailing" secondItem="zKT-oU-6RC" secondAttribute="trailing" id="YAm-f3-P2b"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings-50" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="bouncinessControl" destination="mWY-wy-F5s" id="Vpk-Rd-rga"/>
                         <outlet property="numBallsControl" destination="gpI-UH-2k6" id="NJg-g9-Lcl"/>
@@ -223,12 +252,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="750" y="589"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -237,6 +267,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="rZU-Sl-JT3" kind="relationship" relationship="viewControllers" id="xjr-Hz-tz0"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -246,7 +277,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Controller-50" width="25" height="25"/>
+        <image name="Leaderboard-50" width="25" height="25"/>
+        <image name="Settings-50" width="25" height="25"/>
     </resources>
 </document>

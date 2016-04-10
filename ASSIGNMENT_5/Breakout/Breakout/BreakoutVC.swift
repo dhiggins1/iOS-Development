@@ -78,10 +78,10 @@ class BreakoutVC: UIViewController, UIDynamicAnimatorDelegate, BreakoutCollision
     }
     
     func clear() {slider = nil
+        behavior.clear()
         for view in gameView.subviews {
             view.removeFromSuperview()
         }
-        behavior.clear()
         blocks.removeAll()
         balls.removeAll()
         startTime = nil

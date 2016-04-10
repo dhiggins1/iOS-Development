@@ -13,6 +13,7 @@ struct SettingsKeys {
     static let blocks = "numOfBlocks"
     static let bounciness = "bouncinessOfBalls"
     static let sliderSize = "sliderSize"
+    static let topScores = "topScores"
 }
 
 class SettingsVC: UIViewController {

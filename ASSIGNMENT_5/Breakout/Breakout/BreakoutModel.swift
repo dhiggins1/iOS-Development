@@ -26,6 +26,11 @@ class BreakoutModel: NSObject {
         let timeInterval = NSDate().timeIntervalSinceDate(startTime)
         let numBlocks = (NSUserDefaults.standardUserDefaults().objectForKey(SettingsKeys.blocks) ?? 25) as? Int
         let brokenBlocks = Float(numBlocks! - blocksLeft)
-        return Int((pow(brokenBlocks, 2) / Float(timeInterval)) * 1000)
+        let score = Int((pow(brokenBlocks, 2) / Float(timeInterval)) * 1000)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var scores = defaults.objectForKey(SettingsKeys.topScores) as? [Int] ?? [Int]()
+        scores.append(score)
+        defaults.setValue(scores, forKey: SettingsKeys.topScores)
+        return score
     }
 }

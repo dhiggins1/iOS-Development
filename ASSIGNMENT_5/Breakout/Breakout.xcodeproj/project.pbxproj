@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F0936C11CB7FB4B000D7906 /* BreakoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0936C01CB7FB4A000D7906 /* BreakoutModel.swift */; };
+		3F0936C31CBA6988000D7906 /* TopScoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0936C21CBA6988000D7906 /* TopScoresVC.swift */; };
 		3F53EB9B1CB2B1140081435D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53EB9A1CB2B1140081435D /* AppDelegate.swift */; };
 		3F53EB9D1CB2B1140081435D /* BreakoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53EB9C1CB2B1140081435D /* BreakoutVC.swift */; };
 		3F53EB9F1CB2B1140081435D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53EB9E1CB2B1140081435D /* SettingsVC.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		3F0936C01CB7FB4A000D7906 /* BreakoutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakoutModel.swift; sourceTree = "<group>"; };
+		3F0936C21CBA6988000D7906 /* TopScoresVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopScoresVC.swift; sourceTree = "<group>"; };
 		3F53EB971CB2B1140081435D /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F53EB9A1CB2B1140081435D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F53EB9C1CB2B1140081435D /* BreakoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakoutVC.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				3F0936C01CB7FB4A000D7906 /* BreakoutModel.swift */,
 				3F53EB9E1CB2B1140081435D /* SettingsVC.swift */,
 				3F8DE09A1CB6A05A002CAF10 /* SliderView.swift */,
+				3F0936C21CBA6988000D7906 /* TopScoresVC.swift */,
 				3F53EBA01CB2B1140081435D /* Main.storyboard */,
 				3F53EBA31CB2B1140081435D /* Assets.xcassets */,
 				3F53EBA51CB2B1140081435D /* LaunchScreen.storyboard */,
@@ -285,6 +288,7 @@
 				3F53EB9B1CB2B1140081435D /* AppDelegate.swift in Sources */,
 				3F53EB9D1CB2B1140081435D /* BreakoutVC.swift in Sources */,
 				3F8DE09B1CB6A05A002CAF10 /* SliderView.swift in Sources */,
+				3F0936C31CBA6988000D7906 /* TopScoresVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
